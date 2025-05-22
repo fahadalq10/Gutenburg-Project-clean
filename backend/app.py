@@ -49,8 +49,15 @@ def get_interactions(name):
     
     name = unquote(name).strip().title()
 
+    try:
+        with open("data/interactions.json", "r") as f:
+            interactions = json.load(f)
+    except:
+        return jsonify({"error": "interactions data missing"}), 500
+
     if name not in interactions:
         return jsonify({"error": "not found"}), 404
+
 
     res = []
     for target, count in interactions[name].items(): 
