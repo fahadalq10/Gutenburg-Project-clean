@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Character Visualizer</title>
+  <style>
+    body { font-family: Arial; padding: 2em; max-width: 800px; margin: auto; }
+    .grid { display: flex; flex-wrap: wrap; gap: 0.5em; margin-top: 1em; }
+    .card {
+      padding: 0.5em 1em;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #f9f9f9;
+      transition: background 0.2s;
+    }
+    .card:hover {
+      background: #e0e0e0;
+    }
+    img { max-width: 100%; border-radius: 10px; margin-bottom: 1em; }
+    #interactions { margin-top: 2em; }
+    #summary { margin-top: 1em; background: #f4f4f4; padding: 1em; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h2>Enter Project Gutenberg Book ID</h2>
+  <form method="POST">
+    <input type="text" name="book_id" placeholder="e.g. 1524" required>
+    <button type="submit">Generate</button>
+  </form>
+
+  {% if cover_image %}
+    <img src="{{ cover_image }}" alt="Book Cover">
+  {% endif %}
+
+  {% if summary %}
+    <button onclick="toggleSummary()">📘 Show Summary</button>
+    <div id="summary" style="display: none;">
+      <p>{{ summary }}</p>
+    </div>
+
+    <script>
+      function toggleSummary() {
+        const div = document.getElementById("summary");
+        div.style.display = div.style.display === "none" ? "block" : "none";
+      }
+    </script>
+  {% endif %}
+
+  {% if book_title %}
+    <h3>Characters from "{{ book_title }}"</h3>
+    <div class="grid">
+      {% for name in characters %}
+        <div class="card" onclick="showInteractions('{{ name }}')">{{ name }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div id="interactions"></div>
+
+  <script>
+    function showInteractions(name) {
+      fetch(`/interactions/${name}`)
+        .then(res => res.json())
+        .then(data => {
+          const container = document.getElementById("interactions");
+          if (data.error) {
+            container.innerHTML = `<p>No interactions found for ${name}.</p>`;
+          } else {
+            let html = `<h4>${name}'s Interactions</h4><ul>`;
+            for (const c of data) {
+              html += `<li>${c.name} (${c.count})</li>`;
+            }
+            html += `</ul>`;
+            container.innerHTML = html;
+          }
+        });
+    }
+  </script>
+</body>
+</html>

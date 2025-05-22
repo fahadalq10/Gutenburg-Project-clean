@@ -1,0 +1,106 @@
+{
+  "Sampson": {
+    "Gregory": 15,
+    "Abram": 5,
+    "Benvolio": 1
+  },
+  "Chorus": {},
+  "Gregory": {
+    "Sampson": 14,
+    "Abram": 2,
+    "Benvolio": 1
+  },
+  "Abram": {
+    "Sampson": 4,
+    "Gregory": 1
+  },
+  "Benvolio": {
+    "Tybalt": 2,
+    "Gregory": 1,
+    "Sampson": 1,
+    "Abram": 1,
+    "Montague": 4,
+    "Lady Montague": 1,
+    "Romeo": 30
+  },
+  "Tybalt": {
+    "Benvolio": 2
+  },
+  "First Citizen": {
+    "Capulets": 1,
+    "Montagues": 1
+  },
+  "Capulet": {
+    "Lady Capulet": 1,
+    "Montague": 1,
+    "Paris": 4,
+    "Servant": 1,
+    "Verona": 1
+  },
+  "Lady Capulet": {
+    "Capulet": 1,
+    "Nurse": 10,
+    "Juliet": 6,
+    "Susan": 1,
+    "Mantua": 1
+  },
+  "Montague": {
+    "Capulet": 1,
+    "Benvolio": 3,
+    "Lady Montague": 1
+  },
+  "Lady Montague": {
+    "Montague": 1,
+    "Benvolio": 1
+  },
+  "Prince": {
+    "Capulet": 2,
+    "Montague": 1
+  },
+  "Romeo": {
+    "Benvolio": 24,
+    "Servant": 4,
+    "Signior Martino": 1,
+    "County Anselmo": 1,
+    "Utruvio": 1,
+    "Signior Placentio": 1,
+    "Mercutio": 11,
+    "Valentine": 1,
+    "Capulet": 2,
+    "Rosaline": 1,
+    "Livia": 1,
+    "Signior Valentio": 1,
+    "Tybalt": 1,
+    "Lucio": 1,
+    "Helena": 1,
+    "Roseline": 1,
+    "Verona": 1
+  },
+  "Paris": {
+    "Capulet": 2
+  },
+  "Servant": {
+    "Benvolio": 1,
+    "Romeo": 8,
+    "Capulet": 1,
+    "Lady Capulet": 1
+  },
+  "Nurse": {
+    "Lady Capulet": 7,
+    "Juliet": 4,
+    "Susan": 2,
+    "Lammas Eve": 2,
+    "Mantua": 1
+  },
+  "Juliet": {
+    "Nurse": 2,
+    "Lady Capulet": 2
+  },
+  "Mercutio": {
+    "Romeo": 10
+  },
+  "First Servant": {
+    "Potpan": 1
+  },
+  "Second Servant": {}
+}
