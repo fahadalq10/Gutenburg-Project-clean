@@ -40,7 +40,7 @@ def get_characters(text):
     )
 
     response = client.chat.completions.create(
-        model="gpt-4",
+        model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": prompt + "\n\n" + text[:3000]}],
         temperature=0.2,
         max_tokens=500
@@ -71,7 +71,7 @@ def get_interactions(text):
          )
 
     response = client.chat.completions.create(
-        model="gpt-4",
+        model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.3,
         max_tokens=1000
