@@ -29,7 +29,7 @@ def build_book_data(book_id):
     characters = sorted(list(character_set))
 
     merged_interactions = {}
-    for chunk in chunks[:10]:
+    for chunk in chunks[:5]:
         try:
             result = get_interactions(chunk)
             for speaker, targets in result.items():
