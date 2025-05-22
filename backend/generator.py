@@ -18,7 +18,7 @@ def build_book_data(book_id):
     chunks = split_chunks(text)
 
     character_set = set()
-    for chunk in chunks[:10]:
+    for chunk in chunks[:5]:
         try:
             result = get_characters(chunk)
             lines = [line.strip().title() for line in result.splitlines() if line.strip()]
