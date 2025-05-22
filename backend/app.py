@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request, render_template
-from generator import build_book_data
+from backend.generator import build_book_data
 from urllib.parse import unquote
 import json
 
