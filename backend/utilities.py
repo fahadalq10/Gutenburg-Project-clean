@@ -36,7 +36,7 @@ def get_characters(text):
     prompt = (
         "You are analyzing a literary work (book/play/novel/etc..). "
         "List all major and minor chatacters mentioned in the text. "
-        "output all character names, only output one character name per line, no additional explanation or commentary. Make sure that there are no repetitive names and all title case"
+        "output all character names, only output one character name per line not numbered, no additional explanation or commentary,"
     )
 
     response = client.chat.completions.create(
